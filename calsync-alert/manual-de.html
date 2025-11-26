@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benutzerhandbuch - CalSyncAlert für iOS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 40px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector a {
+            color: #e74c3c;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #e74c3c;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        .language-selector a:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .important-box {
+            background-color: #fee;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .important-box h3 {
+            color: #c0392b;
+            margin-top: 0;
+        }
+        .tip-box {
+            background-color: #e8f6f3;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-number {
+            background-color: #e74c3c;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .permissions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .permissions-table th, .permissions-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .permissions-table th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .permissions-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="manual.html">English</a>
+        <a href="manual-ja.html">日本語</a>
+        <a href="manual-fr.html">Français</a>
+    </div>
+
+    <h1>CalSyncAlert Benutzerhandbuch</h1>
+
+    <p>Willkommen bei CalSyncAlert! Diese App hilft Ihnen, Alarme basierend auf Ihren Kalenderereignissen einzustellen, damit Sie nie einen wichtigen Termin verpassen.</p>
+
+    <div class="toc">
+        <h3>Inhaltsverzeichnis</h3>
+        <ul>
+            <li><a href="#permissions">1. Erforderliche Berechtigungen</a></li>
+            <li><a href="#calendar-sync">2. Kalenderintegration (Wichtig!)</a></li>
+            <li><a href="#getting-started">3. Erste Schritte</a></li>
+            <li><a href="#features">4. Funktionen</a></li>
+            <li><a href="#troubleshooting">5. Fehlerbehebung</a></li>
+        </ul>
+    </div>
+
+    <div class="important-box">
+        <h3>Wichtig: Bevor Sie Beginnen</h3>
+        <p>CalSyncAlert liest Ereignisse aus der <strong>integrierten Kalender-App des iPhones</strong>. Wenn Sie Google Kalender, Outlook oder andere Kalenderdienste verwenden, müssen Sie diese zuerst mit Ihrem iPhone-Kalender synchronisieren, um diese App zu nutzen.</p>
+    </div>
+
+    <h2 id="permissions">1. Erforderliche Berechtigungen</h2>
+
+    <p>CalSyncAlert benötigt bestimmte Berechtigungen, um korrekt zu funktionieren. Hier ist, was Sie wissen müssen:</p>
+
+    <table class="permissions-table">
+        <tr>
+            <th>Berechtigung</th>
+            <th>Zweck</th>
+            <th>Erforderlich</th>
+        </tr>
+        <tr>
+            <td><strong>Kalenderzugriff</strong></td>
+            <td>Lesen Ihrer Kalenderereignisse, um entsprechende Alarme einzustellen</td>
+            <td>Ja (Wesentlich)</td>
+        </tr>
+        <tr>
+            <td><strong>Benachrichtigungen</strong></td>
+            <td>Senden von Alarmbenachrichtigungen, wenn Ereignisse bevorstehen</td>
+            <td>Ja (Wesentlich)</td>
+        </tr>
+    </table>
+
+    <h3>Wie Sie Berechtigungen Erteilen</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>Beim Ersten Start der App</strong>
+        <p>Sie werden aufgefordert, den Kalenderzugriff und Benachrichtigungen zu erlauben. Bitte tippen Sie bei beiden auf „Erlauben".</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>Wenn Sie Berechtigungen Zuvor Abgelehnt Haben</strong>
+        <p>Gehen Sie zu <code>Einstellungen</code> → <code>CalSyncAlert</code> → Aktivieren Sie <code>Kalender</code> und <code>Mitteilungen</code></p>
+    </div>
+
+    <div class="warning-box">
+        <strong>Hinweis:</strong> Ohne Kalenderzugriff kann die App Ihre Ereignisse nicht lesen und funktioniert nicht. Ohne Benachrichtigungsberechtigung werden Alarme Sie nicht alarmieren.
+    </div>
+
+    <h2 id="calendar-sync">2. Kalenderintegration (Wichtig!)</h2>
+
+    <p>CalSyncAlert arbeitet ausschließlich mit der <strong>nativen Kalender-App des iPhones</strong>. Das bedeutet, es liest Ereignisse aus den Kalendern, die in Ihren iOS-Kalendereinstellungen konfiguriert sind.</p>
+
+    <div class="important-box">
+        <h3>Google Kalender mit CalSyncAlert Verwenden</h3>
+        <p>Wenn Sie hauptsächlich Google Kalender verwenden, müssen Sie Ihr Google-Konto zu Ihrem iPhone hinzufügen, um Ihre Ereignisse zu synchronisieren:</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            Öffnen Sie <code>Einstellungen</code> auf Ihrem iPhone
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Scrollen Sie nach unten und tippen Sie auf <code>Kalender</code>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Tippen Sie auf <code>Accounts</code>
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            Tippen Sie auf <code>Account hinzufügen</code>
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            Wählen Sie <code>Google</code>
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            Melden Sie sich mit Ihrem Google-Konto an
+        </div>
+        <div class="step">
+            <span class="step-number">7</span>
+            Stellen Sie sicher, dass <code>Kalender</code> aktiviert ist
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>Microsoft Outlook/Exchange mit CalSyncAlert Verwenden</h3>
+        <p>Für Outlook- oder Exchange-Kalender:</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            Öffnen Sie <code>Einstellungen</code> auf Ihrem iPhone
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Tippen Sie auf <code>Kalender</code> → <code>Accounts</code>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Tippen Sie auf <code>Account hinzufügen</code>
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            Wählen Sie <code>Microsoft Exchange</code> oder <code>Outlook.com</code>
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            Melden Sie sich mit Ihrem Microsoft-Konto an
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            Stellen Sie sicher, dass <code>Kalender</code> aktiviert ist
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>Andere Kalenderdienste Verwenden</h3>
+        <p>Für andere Kalenderdienste (Yahoo, iCloud usw.) folgen Sie ähnlichen Schritten:</p>
+        <ol>
+            <li>Gehen Sie zu <code>Einstellungen</code> → <code>Kalender</code> → <code>Accounts</code></li>
+            <li>Fügen Sie das entsprechende Konto hinzu</li>
+            <li>Aktivieren Sie die Kalendersynchronisierung für dieses Konto</li>
+        </ol>
+        <p>Nach der Synchronisierung erscheinen Ihre Ereignisse in der iPhone-Kalender-App und CalSyncAlert kann sie lesen.</p>
+    </div>
+
+    <div class="tip-box">
+        <strong>Tipp:</strong> Nach dem Hinzufügen eines neuen Kalenderkontos kann es einige Minuten dauern, bis alle Ihre Ereignisse synchronisiert sind. Sie können die Kalender-App öffnen und nach unten ziehen, um zu aktualisieren.
+    </div>
+
+    <h3>Kalendersynchronisierung Überprüfen</h3>
+    <p>Um zu bestätigen, dass Ihre Kalender ordnungsgemäß synchronisiert sind:</p>
+    <ol>
+        <li>Öffnen Sie die iPhone <strong>Kalender</strong>-App</li>
+        <li>Tippen Sie auf <code>Kalender</code> am unteren Bildschirmrand</li>
+        <li>Überprüfen Sie, dass Ihre Google/Outlook/anderen Kalender aufgelistet und angehakt sind</li>
+        <li>Bestätigen Sie, dass Ihre Ereignisse in der Kalender-App erscheinen</li>
+    </ol>
+
+    <h2 id="getting-started">3. Erste Schritte</h2>
+
+    <h3>Ersteinrichtung</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>Herunterladen und Installieren</strong>
+        <p>Laden Sie CalSyncAlert aus dem App Store herunter und installieren Sie es auf Ihrem iPhone.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>Berechtigungen Erteilen</strong>
+        <p>Wenn Sie dazu aufgefordert werden, erlauben Sie den Zugriff auf Kalender und Benachrichtigungen.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>Ihre Kalender Synchronisieren</strong>
+        <p>Wenn Sie externe Kalenderdienste (Google, Outlook usw.) verwenden, richten Sie die Synchronisierung wie oben beschrieben ein.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>Alarmeinstellungen Konfigurieren</strong>
+        <p>Stellen Sie Ihren bevorzugten Alarmzeitpunkt ein (z.B. 15 Minuten vorher, 1 Stunde vorher).</p>
+    </div>
+
+    <h2 id="features">4. Funktionen</h2>
+
+    <h3>Automatische Alarmeinstellung</h3>
+    <p>CalSyncAlert erstellt automatisch Alarme für Ihre Kalenderereignisse basierend auf Ihren Einstellungen.</p>
+
+    <h3>Anpassbare Alarmzeiten</h3>
+    <p>Wählen Sie, wann Sie vor jedem Ereignis benachrichtigt werden möchten - von Minuten bis Stunden im Voraus.</p>
+
+    <h3>Unterstützung Mehrerer Kalender</h3>
+    <p>Funktioniert mit allen mit Ihrem iPhone synchronisierten Kalendern, einschließlich persönlicher, beruflicher und geteilter Kalender.</p>
+
+    <h2 id="troubleshooting">5. Fehlerbehebung</h2>
+
+    <h3>Ereignisse Werden Nicht Angezeigt</h3>
+    <div class="warning-box">
+        <ul>
+            <li>Überprüfen Sie, ob der Kalenderzugriff in den Einstellungen aktiviert ist</li>
+            <li>Überprüfen Sie, ob Ihre externen Kalender mit dem iPhone-Kalender synchronisiert sind</li>
+            <li>Ziehen Sie in der Kalender-App nach unten, um zu aktualisieren</li>
+            <li>Starten Sie die App neu</li>
+        </ul>
+    </div>
+
+    <h3>Alarme Funktionieren Nicht</h3>
+    <div class="warning-box">
+        <ul>
+            <li>Stellen Sie sicher, dass Benachrichtigungsberechtigungen aktiviert sind</li>
+            <li>Überprüfen Sie, ob „Nicht stören" nicht aktiv ist</li>
+            <li>Überprüfen Sie, ob die App nicht zwangsweise beendet wurde</li>
+        </ul>
+    </div>
+
+    <h3>Brauchen Sie Mehr Hilfe?</h3>
+    <p>Kontaktieren Sie uns unter <a href="mailto:techback01@gmail.com">techback01@gmail.com</a></p>
+
+</body>
+</html>

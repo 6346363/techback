@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザーマニュアル - CalSyncAlert for iOS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 40px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector a {
+            color: #e74c3c;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #e74c3c;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        .language-selector a:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .important-box {
+            background-color: #fee;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .important-box h3 {
+            color: #c0392b;
+            margin-top: 0;
+        }
+        .tip-box {
+            background-color: #e8f6f3;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-number {
+            background-color: #e74c3c;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .permissions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .permissions-table th, .permissions-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .permissions-table th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .permissions-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="manual.html">English</a>
+        <a href="manual-fr.html">Français</a>
+        <a href="manual-de.html">Deutsch</a>
+    </div>
+
+    <h1>CalSyncAlert ユーザーマニュアル</h1>
+
+    <p>CalSyncAlertへようこそ！このアプリは、カレンダーの予定に基づいてアラームを設定し、大切な予定を見逃さないようサポートします。</p>
+
+    <div class="toc">
+        <h3>目次</h3>
+        <ul>
+            <li><a href="#permissions">1. 必要な権限</a></li>
+            <li><a href="#calendar-sync">2. カレンダー連携（重要！）</a></li>
+            <li><a href="#getting-started">3. 使い方</a></li>
+            <li><a href="#features">4. 機能</a></li>
+            <li><a href="#troubleshooting">5. トラブルシューティング</a></li>
+        </ul>
+    </div>
+
+    <div class="important-box">
+        <h3>重要：使用前にお読みください</h3>
+        <p>CalSyncAlertは<strong>iPhoneの標準カレンダーアプリ</strong>から予定を読み取ります。Googleカレンダー、Outlook、その他のカレンダーサービスをお使いの場合は、このアプリを使用するために、まずそれらをiPhoneカレンダーと同期させる必要があります。</p>
+    </div>
+
+    <h2 id="permissions">1. 必要な権限</h2>
+
+    <p>CalSyncAlertが正常に動作するには、特定の権限が必要です。以下をご確認ください：</p>
+
+    <table class="permissions-table">
+        <tr>
+            <th>権限</th>
+            <th>目的</th>
+            <th>必須</th>
+        </tr>
+        <tr>
+            <td><strong>カレンダーへのアクセス</strong></td>
+            <td>カレンダーの予定を読み取り、適切なアラームを設定するため</td>
+            <td>はい（必須）</td>
+        </tr>
+        <tr>
+            <td><strong>通知</strong></td>
+            <td>予定が近づいたときにアラーム通知を送信するため</td>
+            <td>はい（必須）</td>
+        </tr>
+    </table>
+
+    <h3>権限の付与方法</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>アプリ初回起動時</strong>
+        <p>カレンダーへのアクセスと通知の許可を求めるメッセージが表示されます。両方とも「許可」をタップしてください。</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>以前に権限を拒否した場合</strong>
+        <p><code>設定</code> → <code>CalSyncAlert</code> → <code>カレンダー</code>と<code>通知</code>を有効にしてください</p>
+    </div>
+
+    <div class="warning-box">
+        <strong>注意：</strong> カレンダーへのアクセス権限がないと、アプリは予定を読み取ることができず、正常に動作しません。通知の権限がないと、アラームが鳴りません。
+    </div>
+
+    <h2 id="calendar-sync">2. カレンダー連携（重要！）</h2>
+
+    <p>CalSyncAlertは<strong>iPhoneの標準カレンダーアプリ</strong>とのみ連携します。つまり、iOSのカレンダー設定で構成されたカレンダーから予定を読み取ります。</p>
+
+    <div class="important-box">
+        <h3>GoogleカレンダーをCalSyncAlertで使用する方法</h3>
+        <p>主にGoogleカレンダーを使用している場合、予定を同期するためにGoogleアカウントをiPhoneに追加する必要があります：</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            iPhoneで<code>設定</code>を開く
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            下にスクロールして<code>カレンダー</code>をタップ
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            <code>アカウント</code>をタップ
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            <code>アカウントを追加</code>をタップ
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            <code>Google</code>を選択
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            Googleアカウントでサインイン
+        </div>
+        <div class="step">
+            <span class="step-number">7</span>
+            <code>カレンダー</code>が有効（オン）になっていることを確認
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>Microsoft Outlook/ExchangeをCalSyncAlertで使用する方法</h3>
+        <p>OutlookまたはExchangeカレンダーの場合：</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            iPhoneで<code>設定</code>を開く
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            <code>カレンダー</code> → <code>アカウント</code>をタップ
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            <code>アカウントを追加</code>をタップ
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            <code>Microsoft Exchange</code>または<code>Outlook.com</code>を選択
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            Microsoftアカウントでサインイン
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            <code>カレンダー</code>が有効になっていることを確認
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>その他のカレンダーサービスを使用する方法</h3>
+        <p>その他のカレンダーサービス（Yahoo、iCloudなど）の場合も、同様の手順に従ってください：</p>
+        <ol>
+            <li><code>設定</code> → <code>カレンダー</code> → <code>アカウント</code>に移動</li>
+            <li>該当するアカウントを追加</li>
+            <li>そのアカウントのカレンダー同期を有効にする</li>
+        </ol>
+        <p>同期が完了すると、予定がiPhoneカレンダーアプリに表示され、CalSyncAlertがそれらを読み取れるようになります。</p>
+    </div>
+
+    <div class="tip-box">
+        <strong>ヒント：</strong> 新しいカレンダーアカウントを追加した後、すべての予定が同期されるまで数分かかる場合があります。カレンダーアプリを開いて下に引っ張ると更新できます。
+    </div>
+
+    <h3>カレンダー同期の確認方法</h3>
+    <p>カレンダーが正しく同期されていることを確認するには：</p>
+    <ol>
+        <li>iPhoneの<strong>カレンダー</strong>アプリを開く</li>
+        <li>画面下部の<code>カレンダー</code>をタップ</li>
+        <li>Google/Outlook/その他のカレンダーがリストに表示され、チェックされていることを確認</li>
+        <li>予定がカレンダーアプリに表示されていることを確認</li>
+    </ol>
+
+    <h2 id="getting-started">3. 使い方</h2>
+
+    <h3>初期設定</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>ダウンロードとインストール</strong>
+        <p>App StoreからCalSyncAlertをダウンロードし、iPhoneにインストールします。</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>権限の付与</strong>
+        <p>メッセージが表示されたら、カレンダーと通知へのアクセスを許可してください。</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>カレンダーの同期</strong>
+        <p>外部カレンダーサービス（Google、Outlookなど）を使用している場合は、上記の手順で同期を設定してください。</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>アラーム設定の構成</strong>
+        <p>希望するアラームのタイミング（15分前、1時間前など）を設定します。</p>
+    </div>
+
+    <h2 id="features">4. 機能</h2>
+
+    <h3>自動アラーム設定</h3>
+    <p>CalSyncAlertは、設定した条件に基づいてカレンダーの予定に対して自動的にアラームを作成します。</p>
+
+    <h3>カスタマイズ可能な通知タイミング</h3>
+    <p>各予定の何分前、何時間前に通知を受けるか選択できます。</p>
+
+    <h3>複数カレンダーのサポート</h3>
+    <p>個人、仕事、共有カレンダーなど、iPhoneに同期されているすべてのカレンダーで動作します。</p>
+
+    <h2 id="troubleshooting">5. トラブルシューティング</h2>
+
+    <h3>予定が表示されない場合</h3>
+    <div class="warning-box">
+        <ul>
+            <li>設定でカレンダーへのアクセスが有効になっていることを確認</li>
+            <li>外部カレンダーがiPhoneカレンダーと同期されていることを確認</li>
+            <li>カレンダーアプリで下に引っ張って更新</li>
+            <li>アプリを再起動</li>
+        </ul>
+    </div>
+
+    <h3>アラームが鳴らない場合</h3>
+    <div class="warning-box">
+        <ul>
+            <li>通知の権限が有効になっていることを確認</li>
+            <li>おやすみモードがオフになっていることを確認</li>
+            <li>アプリが強制終了されていないことを確認</li>
+        </ul>
+    </div>
+
+    <h3>さらにサポートが必要な場合</h3>
+    <p>お問い合わせ先：<a href="mailto:techback01@gmail.com">techback01@gmail.com</a></p>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual - CalSyncAlert for iOS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #e74c3c;
+            margin-top: 40px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-selector a {
+            color: #e74c3c;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #e74c3c;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        .language-selector a:hover {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .important-box {
+            background-color: #fee;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .important-box h3 {
+            color: #c0392b;
+            margin-top: 0;
+        }
+        .tip-box {
+            background-color: #e8f6f3;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-number {
+            background-color: #e74c3c;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .permissions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .permissions-table th, .permissions-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .permissions-table th {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .permissions-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <a href="manual-ja.html">日本語</a>
+        <a href="manual-fr.html">Français</a>
+        <a href="manual-de.html">Deutsch</a>
+    </div>
+
+    <h1>CalSyncAlert User Manual</h1>
+
+    <p>Welcome to CalSyncAlert! This app helps you set alarms based on your calendar events, ensuring you never miss an important appointment.</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#permissions">1. Required Permissions</a></li>
+            <li><a href="#calendar-sync">2. Calendar Integration (Important!)</a></li>
+            <li><a href="#getting-started">3. Getting Started</a></li>
+            <li><a href="#features">4. Features</a></li>
+            <li><a href="#troubleshooting">5. Troubleshooting</a></li>
+        </ul>
+    </div>
+
+    <div class="important-box">
+        <h3>Important: Before You Start</h3>
+        <p>CalSyncAlert reads events from your <strong>iPhone's built-in Calendar app</strong>. If you use Google Calendar, Outlook, or other calendar services, you must first sync them with your iPhone Calendar to use this app.</p>
+    </div>
+
+    <h2 id="permissions">1. Required Permissions</h2>
+
+    <p>CalSyncAlert requires specific permissions to function correctly. Here's what you need to know:</p>
+
+    <table class="permissions-table">
+        <tr>
+            <th>Permission</th>
+            <th>Purpose</th>
+            <th>Required</th>
+        </tr>
+        <tr>
+            <td><strong>Calendar Access</strong></td>
+            <td>Read your calendar events to set appropriate alarms</td>
+            <td>Yes (Essential)</td>
+        </tr>
+        <tr>
+            <td><strong>Notifications</strong></td>
+            <td>Send alarm notifications when events are approaching</td>
+            <td>Yes (Essential)</td>
+        </tr>
+    </table>
+
+    <h3>How to Grant Permissions</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>When First Launching the App</strong>
+        <p>You will be prompted to allow calendar access and notifications. Please tap "Allow" for both.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>If You Denied Permissions Previously</strong>
+        <p>Go to <code>Settings</code> → <code>CalSyncAlert</code> → Enable <code>Calendars</code> and <code>Notifications</code></p>
+    </div>
+
+    <div class="warning-box">
+        <strong>Note:</strong> Without calendar access, the app cannot read your events and will not function. Without notification permission, alarms will not alert you.
+    </div>
+
+    <h2 id="calendar-sync">2. Calendar Integration (Important!)</h2>
+
+    <p>CalSyncAlert works exclusively with the <strong>iPhone's native Calendar app</strong>. This means it reads events from the calendars configured in your iOS Calendar settings.</p>
+
+    <div class="important-box">
+        <h3>Using Google Calendar with CalSyncAlert</h3>
+        <p>If you primarily use Google Calendar, you need to add your Google account to your iPhone to sync your events:</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            Open <code>Settings</code> on your iPhone
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Scroll down and tap <code>Calendar</code>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Tap <code>Accounts</code>
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            Tap <code>Add Account</code>
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            Select <code>Google</code>
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            Sign in with your Google account
+        </div>
+        <div class="step">
+            <span class="step-number">7</span>
+            Make sure <code>Calendars</code> is enabled (turned on)
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>Using Microsoft Outlook/Exchange with CalSyncAlert</h3>
+        <p>For Outlook or Exchange calendars:</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            Open <code>Settings</code> on your iPhone
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            Tap <code>Calendar</code> → <code>Accounts</code>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            Tap <code>Add Account</code>
+        </div>
+        <div class="step">
+            <span class="step-number">4</span>
+            Select <code>Microsoft Exchange</code> or <code>Outlook.com</code>
+        </div>
+        <div class="step">
+            <span class="step-number">5</span>
+            Sign in with your Microsoft account
+        </div>
+        <div class="step">
+            <span class="step-number">6</span>
+            Ensure <code>Calendars</code> is enabled
+        </div>
+    </div>
+
+    <div class="important-box">
+        <h3>Using Other Calendar Services</h3>
+        <p>For other calendar services (Yahoo, iCloud, etc.), follow similar steps:</p>
+        <ol>
+            <li>Go to <code>Settings</code> → <code>Calendar</code> → <code>Accounts</code></li>
+            <li>Add the appropriate account</li>
+            <li>Enable calendar synchronization for that account</li>
+        </ol>
+        <p>Once synced, your events will appear in the iPhone Calendar app and CalSyncAlert will be able to read them.</p>
+    </div>
+
+    <div class="tip-box">
+        <strong>Tip:</strong> After adding a new calendar account, it may take a few minutes for all your events to sync. You can open the Calendar app and pull down to refresh.
+    </div>
+
+    <h3>Verifying Calendar Sync</h3>
+    <p>To confirm your calendars are properly synced:</p>
+    <ol>
+        <li>Open the iPhone <strong>Calendar</strong> app</li>
+        <li>Tap <code>Calendars</code> at the bottom of the screen</li>
+        <li>Verify that your Google/Outlook/other calendars are listed and checked</li>
+        <li>Confirm that your events appear in the Calendar app</li>
+    </ol>
+
+    <h2 id="getting-started">3. Getting Started</h2>
+
+    <h3>Initial Setup</h3>
+
+    <div class="step">
+        <span class="step-number">1</span>
+        <strong>Download and Install</strong>
+        <p>Download CalSyncAlert from the App Store and install it on your iPhone.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">2</span>
+        <strong>Grant Permissions</strong>
+        <p>When prompted, allow access to Calendar and Notifications.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">3</span>
+        <strong>Sync Your Calendars</strong>
+        <p>If using external calendar services (Google, Outlook, etc.), set up synchronization as described above.</p>
+    </div>
+
+    <div class="step">
+        <span class="step-number">4</span>
+        <strong>Configure Alarm Settings</strong>
+        <p>Set your preferred alarm timing (e.g., 15 minutes before, 1 hour before).</p>
+    </div>
+
+    <h2 id="features">4. Features</h2>
+
+    <h3>Automatic Alarm Setting</h3>
+    <p>CalSyncAlert automatically creates alarms for your calendar events based on your preferences.</p>
+
+    <h3>Customizable Alert Timing</h3>
+    <p>Choose when you want to be alerted before each event - from minutes to hours in advance.</p>
+
+    <h3>Multiple Calendar Support</h3>
+    <p>Works with all calendars synced to your iPhone, including personal, work, and shared calendars.</p>
+
+    <h2 id="troubleshooting">5. Troubleshooting</h2>
+
+    <h3>Events Not Appearing</h3>
+    <div class="warning-box">
+        <ul>
+            <li>Verify calendar access is enabled in Settings</li>
+            <li>Check that your external calendars are synced with iPhone Calendar</li>
+            <li>Pull down in the Calendar app to refresh</li>
+            <li>Restart the app</li>
+        </ul>
+    </div>
+
+    <h3>Alarms Not Working</h3>
+    <div class="warning-box">
+        <ul>
+            <li>Ensure notification permissions are enabled</li>
+            <li>Check that Do Not Disturb is not active</li>
+            <li>Verify the app is not force-closed</li>
+        </ul>
+    </div>
+
+    <h3>Need More Help?</h3>
+    <p>Contact us at <a href="mailto:techback01@gmail.com">techback01@gmail.com</a></p>
+
+</body>
+</html>

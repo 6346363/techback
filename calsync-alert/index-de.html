@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habiting for iOS - ドキュメント</title>
+    <title>CalSyncAlert für iOS - Dokumentation</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-            line-height: 1.8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
@@ -22,7 +22,7 @@
         }
         h1 {
             color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #e74c3c;
             padding-bottom: 15px;
             margin-bottom: 30px;
         }
@@ -41,7 +41,7 @@
             background-color: #f8f9fa;
             padding: 25px;
             border-radius: 6px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #e74c3c;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .link-card:hover {
@@ -59,7 +59,7 @@
             margin-bottom: 15px;
         }
         .link-card a {
-            color: #3498db;
+            color: #e74c3c;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1em;
@@ -75,7 +75,7 @@
             color: #7f8c8d;
         }
         .footer a {
-            color: #3498db;
+            color: #e74c3c;
             text-decoration: none;
         }
         .footer a:hover {
@@ -86,20 +86,20 @@
             margin-bottom: 30px;
         }
         .language-selector a {
-            color: #3498db;
+            color: #e74c3c;
             text-decoration: none;
             padding: 8px 15px;
-            border: 1px solid #3498db;
+            border: 1px solid #e74c3c;
             border-radius: 4px;
             margin-left: 10px;
             transition: background-color 0.2s, color 0.2s;
         }
         .language-selector a:hover {
-            background-color: #3498db;
+            background-color: #e74c3c;
             color: white;
         }
         .language-selector a.active {
-            background-color: #3498db;
+            background-color: #e74c3c;
             color: white;
         }
         .lang-links {
@@ -112,7 +112,7 @@
             text-decoration: none;
         }
         .lang-links a:hover {
-            color: #3498db;
+            color: #e74c3c;
             text-decoration: underline;
         }
         .back-link {
@@ -123,50 +123,67 @@
             text-decoration: none;
         }
         .back-link a:hover {
-            color: #3498db;
+            color: #e74c3c;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="back-link">
-            <a href="../index-ja.html">← techback アプリ一覧に戻る</a>
+            <a href="../index.html">← Zurück zu techback Apps</a>
         </div>
 
         <div class="language-selector">
             <a href="index.html">English</a>
-            <a href="index-ja.html" class="active">日本語</a>
+            <a href="index-ja.html">日本語</a>
+            <a href="index-fr.html">Français</a>
+            <a href="index-de.html" class="active">Deutsch</a>
         </div>
 
-        <h1>Habiting for iOS</h1>
+        <h1>CalSyncAlert für iOS</h1>
 
         <div class="app-description">
-            <p>Habitingの公式ドキュメントページへようこそ。Habitingは、良い習慣を身につけ、維持するために設計されたiOSアプリケーションです。</p>
+            <p>Willkommen auf der offiziellen Dokumentationsseite für CalSyncAlert, eine iOS-Anwendung, die Ihnen hilft, Alarme basierend auf Ihren Kalenderereignissen einzustellen, damit Sie nie einen wichtigen Termin verpassen.</p>
         </div>
 
         <div class="links">
             <div class="link-card">
-                <h2>プライバシーポリシー</h2>
-                <p>データの取り扱いとプライバシー保護について説明しています。</p>
-                <a href="privacy-policy-ja.html">プライバシーポリシーを見る →</a>
+                <h2>Benutzerhandbuch</h2>
+                <p>Erfahren Sie, wie Sie CalSyncAlert verwenden, die Kalenderintegration einrichten und Alarme konfigurieren.</p>
+                <a href="manual-de.html">Benutzerhandbuch anzeigen →</a>
                 <div class="lang-links">
-                    <a href="privacy-policy.html">View in English</a>
+                    <a href="manual.html">English</a>
+                    <a href="manual-ja.html">日本語</a>
+                    <a href="manual-fr.html">Français</a>
                 </div>
             </div>
 
             <div class="link-card">
-                <h2>利用規約</h2>
-                <p>Habitingをご利用いただくための規約をご確認ください。</p>
-                <a href="terms-of-use-ja.html">利用規約を見る →</a>
+                <h2>Datenschutzrichtlinie</h2>
+                <p>Erfahren Sie, wie wir mit Ihren Daten umgehen und Ihre Privatsphäre schützen.</p>
+                <a href="privacy-policy-de.html">Datenschutzrichtlinie anzeigen →</a>
                 <div class="lang-links">
-                    <a href="terms-of-use.html">View in English</a>
+                    <a href="privacy-policy.html">English</a>
+                    <a href="privacy-policy-ja.html">日本語</a>
+                    <a href="privacy-policy-fr.html">Français</a>
+                </div>
+            </div>
+
+            <div class="link-card">
+                <h2>Nutzungsbedingungen</h2>
+                <p>Lesen Sie die Geschäftsbedingungen für die Nutzung von CalSyncAlert.</p>
+                <a href="terms-of-use-de.html">Nutzungsbedingungen anzeigen →</a>
+                <div class="lang-links">
+                    <a href="terms-of-use.html">English</a>
+                    <a href="terms-of-use-ja.html">日本語</a>
+                    <a href="terms-of-use-fr.html">Français</a>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>ご質問やサポートについては、<a href="mailto:techback01@gmail.com">techback01@gmail.com</a> までお問い合わせください。</p>
-            <p>&copy; 2024 techback. All rights reserved.</p>
+            <p>Bei Fragen oder für Unterstützung kontaktieren Sie uns bitte unter <a href="mailto:techback01@gmail.com">techback01@gmail.com</a></p>
+            <p>&copy; 2024 techback. Alle Rechte vorbehalten.</p>
         </div>
     </div>
 </body>
